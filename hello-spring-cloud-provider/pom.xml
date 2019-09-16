@@ -10,23 +10,11 @@
     <relativePath>../hello-spring-cloud-dependencies/pom.xml</relativePath>
   </parent>
 
-  <artifactId>hello-spring-cloud-zipkin</artifactId>
+  <artifactId>hello-spring-cloud-provider</artifactId>
   <packaging>jar</packaging>
 
   <dependencies>
     <!-- Spring Boot Begin -->
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-web</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-tomcat</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-actuator</artifactId>
-    </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-test</artifactId>
@@ -37,7 +25,7 @@
     <!-- Spring Cloud Begin -->
     <dependency>
       <groupId>org.springframework.cloud</groupId>
-      <artifactId>spring-cloud-starter-zipkin</artifactId>
+      <artifactId>spring-cloud-starter-config</artifactId>
     </dependency>
 
     <dependency>
@@ -47,7 +35,7 @@
 
     <dependency>
       <groupId>org.springframework.cloud</groupId>
-      <artifactId>spring-cloud-starter-config</artifactId>
+      <artifactId>spring-cloud-starter-zipkin</artifactId>
     </dependency>
 
     <dependency>
@@ -59,27 +47,6 @@
       <artifactId>spring-boot-admin-starter-client</artifactId>
     </dependency>
     <!-- Spring Cloud End -->
-
-    <!-- ZipKin Begin -->
-    <dependency>
-      <groupId>io.zipkin.java</groupId>
-      <artifactId>zipkin</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>io.zipkin.java</groupId>
-      <artifactId>zipkin-server</artifactId>
-      <exclusions>
-        <exclusion>
-          <groupId>org.springframework.boot</groupId>
-          <artifactId>spring-boot-starter-log4j2</artifactId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-    <dependency>
-      <groupId>io.zipkin.java</groupId>
-      <artifactId>zipkin-autoconfigure-ui</artifactId>
-    </dependency>
-    <!-- ZipKin End -->
   </dependencies>
 
   <build>
@@ -88,7 +55,7 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
         <configuration>
-          <mainClass>com.antoniopeng.itoken.zipkin.ZipKinApplication</mainClass>
+          <mainClass>com.antoniopeng.hello.spring.cloud.provider.ProviderApplication</mainClass>
         </configuration>
       </plugin>
     </plugins>

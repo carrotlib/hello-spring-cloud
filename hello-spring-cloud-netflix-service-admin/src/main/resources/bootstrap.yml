@@ -1,7 +1,0 @@
-spring:
-  cloud:
-    config:
-      uri: http://localhost:8888
-      name: hello-spring-cloud-netflix-service-admin
-      label: master
-      profile: dev
