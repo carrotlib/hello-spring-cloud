@@ -6,7 +6,7 @@ spring:
       label: master
       server:
         git:
-          uri: {uri}
+          uri: git@github.com:carrotlib/hello-spring-cloud.git
           search-paths: {search-paths}
           username: {username}
           password: {password}

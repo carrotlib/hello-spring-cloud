@@ -1,7 +1,20 @@
 spring:
-  cloud:
-    config:
-      uri: http://localhost:8888
-      name: hello-spring-cloud-eureka
-      label: master
-      profile: dev
+  application:
+    # 指定服务名，全局唯一
+    name: hello-spring-cloud-eureka
+
+server:
+  # 服务端口
+  port: 8000
+
+eureka:
+  instance:
+    # 指定主机
+    hostname: localhost
+  client:
+    # 声明为 Eureka 服务端，默认为 Eureka 客户端
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      # 指定 Eureka 服务端网址
+      defaultZone: http://localhost:8000/eureka/

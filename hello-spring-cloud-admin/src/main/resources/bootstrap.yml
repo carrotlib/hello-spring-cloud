@@ -1,7 +1,21 @@
 spring:
-  cloud:
-    config:
-      uri: http://localhost:8888
-      name: hello-spring-cloud-admin
-      label: master
-      profile: dev
+  application:
+    name: hello-spring-cloud-admin
+
+server:
+  port: 8500
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8000/eureka/
+
+# Admin 监控配置
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: health,info

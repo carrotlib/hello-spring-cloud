@@ -1,7 +1,25 @@
 spring:
-  cloud:
-    config:
-      uri: http://localhost:8888
-      name: hello-spring-cloud-consumer
-      label: master
-      profile: dev
+  application:
+    # 指定服务名
+    name: hello-spring-cloud-consumer
+  # thymeleaf 相关配置
+  thymeleaf:
+    cache: false
+    mode: LEGACYHTML5
+    encoding: UTF-8
+    servlet:
+      content-type: text/html
+
+server:
+  port: 8200
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8000/eureka/
+
+feign:
+  hystrix:
+    # 开启 Hystrix 功能
+    # Feign 中自带 Hystrix，默认是关闭的
+    enabled: true

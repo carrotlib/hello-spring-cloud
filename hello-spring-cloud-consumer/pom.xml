@@ -4,12 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>com.antoniopeng</groupId>
+    <groupId>com.carrotlib</groupId>
     <artifactId>hello-spring-cloud-dependencies</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <relativePath>../hello-spring-cloud-dependencies/pom.xml</relativePath>
   </parent>
 
+  <groupId>com.carrotlib</groupId>
   <artifactId>hello-spring-cloud-consumer</artifactId>
   <packaging>jar</packaging>
 
@@ -91,7 +92,7 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
         <configuration>
-          <mainClass>com.antoniopeng.hello.spring.cloud.consumer.ConsumerApplication</mainClass>
+          <mainClass>com.carrotlib.hello.spring.cloud.consumer.ConsumerApplication</mainClass>
         </configuration>
       </plugin>
     </plugins>
